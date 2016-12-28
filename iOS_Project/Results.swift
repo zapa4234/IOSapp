@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Results: UIViewController {
 
@@ -17,7 +18,16 @@ class Results: UIViewController {
         super.viewDidLoad()
 
         Label.text = dataPassed
-        print("Data Passed: \(dataPassed)")
+        
+        let backgroundQueue = DispatchQueue(label: "com.app.queue",
+                                            qos: .background,
+                                            target: nil)
+        
+        // Fetching the information in another thread
+        backgroundQueue.async {
+            print("Fetching Results")
+            self.fetchResults();
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +36,47 @@ class Results: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func fetchResults(){
+        
+//        Alamofire.request(<#T##url: URLConvertible##URLConvertible#>, method: <#T##HTTPMethod#>, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
+        
+        Alamofire.request("http://localhost:8080/rest/getRecipes", method: .get, parameters: ["items":dataPassed])
+        .validate()
+        .responseJSON { (response) in
+            debugPrint(response.data ?? "NILL")
+        }
+        
+        print("Fetched results")
+    }
+//        Alamofire.request(
+//            url: "http://localhost:8080/rest/getRecipes",
+//            method: GET,
+//            parameters: ["items": dataPassed],
+//            encoding: .URL)
+//            .validate()
+//            .responseJSON { (response) -> Void in
+//                guard response.result.isSuccess else {
+//                    print("Error while fetching remote rooms: \(response.result.error)")
+//                    completion(nil)
+//                    return
+//                }
+//                
+//                guard let value = response.result.value as? [String: AnyObject],
+//                    let rows = value["rows"] as? [[String: AnyObject]] else {
+//                        print("Malformed data received from fetchAllRooms service")
+//                        completion(nil)
+//                        return
+//                }
+//                
+//                var rooms = [RemoteRoom]()
+//                for roomDict in rows {
+//                    rooms.append(RemoteRoom(jsonData: roomDict))
+//                }
+//                
+//                completion(rooms)
+////        }
+//   }
+//    
 
     /*
     // MARK: - Navigation
