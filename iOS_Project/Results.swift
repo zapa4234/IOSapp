@@ -43,7 +43,7 @@ class Results: UIViewController {
         Alamofire.request("http://localhost:8080/rest/getRecipes", method: .get, parameters: ["items":dataPassed])
         .validate()
         .responseJSON { (response) in
-            debugPrint(response.data ?? "NILL")
+            debugPrint(response.description)
         }
         
         print("Fetched results")
