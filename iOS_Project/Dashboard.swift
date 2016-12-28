@@ -10,6 +10,8 @@ import UIKit
 class Dashboard: UIViewController {
 
     var userInput = ""
+    var userName = String()
+    
     @IBOutlet weak var inputText: UITextField!
     @IBAction func SearchButton() {
         
@@ -35,12 +37,26 @@ class Dashboard: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        let backgroundQueue = DispatchQueue(label: "com.app.queue",
+                                            qos: .background,
+                                            target: nil)
+        
+        // Displaying Twitter username in the background
+        backgroundQueue.async {
+            let alert = UIAlertController(title: "Successful Login",
+                                          message: "User \(self.userName) has logged in",
+                preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            )
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     // This is used to transfer data between screens so we can display results in the other screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // moving to the next screen where I will display data
-        if(segue.identifier == "Results")
+        if(segue.identifier == "moveToResults")
         {
             let svc = segue.destination as! Results
             svc.dataPassed = userInput

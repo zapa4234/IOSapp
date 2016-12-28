@@ -10,6 +10,8 @@ import UIKit
 import TwitterKit
 
 class ViewController: UIViewController {
+    var userName = String() //used to get userName
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +25,10 @@ class ViewController: UIViewController {
                     preferredStyle: UIAlertControllerStyle.alert
                 )
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.userName = unwrappedSession.userName
+                self.performSegue(withIdentifier: "moveToInput", sender: self)
                 
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Dashboard")
-//                self.present(vc!, animated: true, completion: nil)
-                
-            } else {
+                } else {
                 NSLog("Login error: %@", error!.localizedDescription);
             }
         }
@@ -45,7 +46,10 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if (segue.identifier == "moveToInput"){
+            let svc = segue.destination as! Dashboard
+            svc.userName = self.userName //passing the username to other screen.
+        }
     }
     
 }
