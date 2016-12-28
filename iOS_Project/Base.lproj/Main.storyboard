@@ -86,11 +86,42 @@
                     </view>
                     <connections>
                         <outlet property="inputText" destination="s2N-rR-PpX" id="ker-Kq-FSt"/>
+                        <segue destination="Hn4-vg-QIb" kind="show" identifier="moveToResults" id="rvD-XY-VEe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k46-VV-O2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="349.60000000000002" y="-29.23538230884558"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="GWG-wG-KxE">
+            <objects>
+                <viewController storyboardIdentifier="Results" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hn4-vg-QIb" customClass="Results" customModule="iOS_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uYs-3y-VtN"/>
+                        <viewControllerLayoutGuide type="bottom" id="gIc-Jw-ZVd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rF7-QY-WIK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stuff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGc-OB-W5a">
+                                <rect key="frame" x="97" y="77" width="42" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.67285106650000004" blue="0.76877164200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="Label" destination="lGc-OB-W5a" id="Y33-00-e8K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzB-RX-6JS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048.8" y="-29.23538230884558"/>
         </scene>
     </scenes>
 </document>

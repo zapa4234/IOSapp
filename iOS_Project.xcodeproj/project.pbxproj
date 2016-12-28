@@ -20,6 +20,7 @@
 		394EFD4F1E0C917C00C58E29 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 394EFD4B1E0C917C00C58E29 /* TwitterKitResources.bundle */; };
 		394EFD501E0C917C00C58E29 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394EFD4C1E0C917C00C58E29 /* TwitterCore.framework */; };
 		39EE4B8E1E132F9400295802 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE4B8D1E132F9400295802 /* Dashboard.swift */; };
+		39EE4B901E133B3B00295802 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE4B8F1E133B3B00295802 /* Results.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		394EFD4B1E0C917C00C58E29 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		394EFD4C1E0C917C00C58E29 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		39EE4B8D1E132F9400295802 /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		39EE4B8F1E133B3B00295802 /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				394EFD171E0C8BBF00C58E29 /* AppDelegate.swift */,
 				394EFD191E0C8BBF00C58E29 /* ViewController.swift */,
 				394EFD1B1E0C8BBF00C58E29 /* Main.storyboard */,
+				39EE4B8F1E133B3B00295802 /* Results.swift */,
 				39EE4B8D1E132F9400295802 /* Dashboard.swift */,
 				394EFD211E0C8BBF00C58E29 /* Assets.xcassets */,
 				394EFD231E0C8BBF00C58E29 /* LaunchScreen.storyboard */,
@@ -302,6 +305,7 @@
 				394EFD201E0C8BBF00C58E29 /* iOS_Project.xcdatamodeld in Sources */,
 				39EE4B8E1E132F9400295802 /* Dashboard.swift in Sources */,
 				394EFD181E0C8BBF00C58E29 /* AppDelegate.swift in Sources */,
+				39EE4B901E133B3B00295802 /* Results.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

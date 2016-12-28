@@ -24,8 +24,8 @@ class ViewController: UIViewController {
                 )
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Dashboard")
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Dashboard")
+//                self.present(vc!, animated: true, completion: nil)
                 
             } else {
                 NSLog("Login error: %@", error!.localizedDescription);
@@ -43,7 +43,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
     
 }
 
